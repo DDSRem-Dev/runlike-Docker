@@ -12,6 +12,7 @@ RUN apk add --no-cache python3 py3-pip git curl && \
         "linux/arm64"*)   ARCH="aarch64" ;; \
         "linux/arm/v7")   ARCH="armhf"   ;; \
         "linux/arm/v6")   ARCH="armel"   ;; \
+        "linux/ppc64le")  ARCH="ppc64le" ;; \
         "linux/s390x")    ARCH="s390x"   ;; \
         *)                ARCH="x86_64"  ;; \
     esac && \
