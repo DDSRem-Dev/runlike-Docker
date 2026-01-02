@@ -8,11 +8,9 @@ ENV DOCKER_API_VERSION=1.41
 RUN apk add --no-cache python3 py3-pip git curl && \
     case "${TARGETPLATFORM}" in \
         "linux/amd64")    ARCH="x86_64"  ;; \
-        "linux/386")      ARCH="x86_64"    ;; \
         "linux/arm64"*)   ARCH="aarch64" ;; \
         "linux/arm/v7")   ARCH="armhf"   ;; \
         "linux/arm/v6")   ARCH="armel"   ;; \
-        "linux/s390x")    ARCH="s390x"   ;; \
         *)                ARCH="x86_64"  ;; \
     esac && \
     echo "Building for ${TARGETPLATFORM}, downloading for ${ARCH}..." && \
